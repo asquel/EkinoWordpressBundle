@@ -36,9 +36,9 @@ class EkinoWordpressExtension extends Extension
         $config = $this->processConfiguration(new Configuration(), $configs);
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('orm.xml');
+        //$loader->load('orm.xml');
         $loader->load('services.xml');
-        $loader->load('hooks.xml');
+        //$loader->load('hooks.xml');
 
         if (isset($config['table_prefix'])) {
             $this->loadTablePrefix($container, $config['table_prefix']);
@@ -48,9 +48,9 @@ class EkinoWordpressExtension extends Extension
             $this->loadWordpressDirectory($container, $config['wordpress_directory']);
         }
 
-        if (isset($config['entity_manager'])) {
+        /*if (isset($config['entity_manager'])) {
             $this->loadEntityManager($container, $config['entity_manager']);
-        }
+        }*/
     }
 
     /**
